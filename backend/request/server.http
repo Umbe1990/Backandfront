@@ -1,0 +1,39 @@
+//@baseUrl=http://localhost:5001/authors
+
+@baseUrl=http://localhost:5001/blogs
+
+
+GET {{baseUrl}}
+
+###
+GET {{baseUrl}}/66df34346691399c0a0e563a
+
+
+
+###
+
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+   "category": "miche",
+        "title": "ilaria",
+        "cover": "strioasisng",
+        "author": "ddd",
+        "content": "dove si va"
+}
+
+###
+
+PUT {{baseUrl}}/66df34346691399c0a0e563a
+Content-Type: application/json
+
+
+{
+        "category": "azzzzzzzzzzzzzzzz "
+       
+}
+
+
+###
+DELETE {{baseUrl}}/66df34346691399c0a0e563a
