@@ -1,0 +1,20 @@
+@baseUrl=http://localhost:5001/authors
+
+POST {{baseUrl}}
+Content-Type: application/json
+
+
+
+{
+        
+        "name": "ggggg",
+        "surname": "ner@",
+        "email": "sonobelooonero@.it",
+        "birthDay" :"ciso",
+        "avatar": ""
+        
+}
+
+
+###
+GET {{baseUrl}}

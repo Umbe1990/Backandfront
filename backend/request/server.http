@@ -1,6 +1,6 @@
 //@baseUrl=http://localhost:5001/authors
 
-@baseUrl=http://localhost:5001/blogs
+@baseUrl=http://localhost:5001/authors
 
 
 GET {{baseUrl}}
@@ -16,11 +16,13 @@ POST {{baseUrl}}
 Content-Type: application/json
 
 {
-   "category": "miche",
-        "title": "ilaria",
-        "cover": "strioasisng",
-        "author": "ddd",
-        "content": "dove si va"
+        
+        "name": "miche",
+        "surname": "ilaria",
+        "email": "u.co@gmail.it",
+        "birhDay":"ciao",
+        "avatar": ""
+        
 }
 
 ###
@@ -37,3 +39,6 @@ Content-Type: application/json
 
 ###
 DELETE {{baseUrl}}/66df34346691399c0a0e563a
+
+
+
