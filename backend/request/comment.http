@@ -1,0 +1,33 @@
+@baseUrl=http://localhost:5001/blogs
+
+POST  {{baseUrl}}/66f4651a2de83a83b1b11955/comments
+Content-Type: application/json
+
+
+{
+        
+       "content":"sososossjbfbdf"
+        
+}
+
+
+###
+
+GET  {{baseUrl}}/66f4651a2de83a83b1b11955/comments
+
+###
+GET  {{baseUrl}}/66f4651a2de83a83b1b11955/comments/66f46f6fb6f79d294241e137
+
+###
+DELETE {{baseUrl}}/66f4651a2de83a83b1b11955/comments/66f46982d2dfb6d5ef4c2361
+
+###
+PUT  {{baseUrl}}/66f4651a2de83a83b1b11955/comments/66f46f6fb6f79d294241e137
+Content-Type: application/json
+
+
+{
+        
+       "content":"FIERIffffff "
+        
+}

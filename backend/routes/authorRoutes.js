@@ -56,7 +56,7 @@ router.patch('/:authorId/avatar',uploadCloudinary.single('avatar'),async (req,re
         await author.save()
         res.send(author)
     } catch{
-        
+
     }
 })
 

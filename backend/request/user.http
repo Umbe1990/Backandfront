@@ -1,0 +1,30 @@
+@baseUrl=http://localhost:5001/auth
+@jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmY3YzY5YjUyYjI2ZTMwYzZmMzA0ZTIiLCJpYXQiOjE3Mjc1MTc1MTcsImV4cCI6MTcyNzUyMTExN30.IIXWEnNWKkTk8eNQMNdhdfoDcNjo7OcaPT2K6U4_bmE
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+       "name": "Umberto",
+        "email":"umge.conkkkke@gmail.it",
+        "password":"umbe"
+        
+            
+}
+
+###
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+       
+        "email":"umbe.conkkkke@gmail.it",
+        "password":"umbe"
+        
+            
+}
+
+###
+
+GET  {{baseUrl}}/me
+Authorization: Bearer {{jwt}}
+Content-Type: application/json

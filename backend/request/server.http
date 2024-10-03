@@ -1,27 +1,39 @@
 //@baseUrl=http://localhost:5001/authors
 
-@baseUrl=http://localhost:5001/authors
+@baseUrl=http://localhost:5001/blogs
+@jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmY3YzY5YjUyYjI2ZTMwYzZmMzA0ZTIiLCJpYXQiOjE3Mjc1MTc1MTcsImV4cCI6MTcyNzUyMTExN30.IIXWEnNWKkTk8eNQMNdhdfoDcNjo7OcaPT2K6U4_bmE
+
 
 
 GET {{baseUrl}}
+Authorization: Bearer {{jwt}}
 
 ###
-GET {{baseUrl}}/66df34346691399c0a0e563a
-
+GET {{baseUrl}}/66f4444922b3f481c0048a4c
+Authorization: Bearer {{jwt}}
 
 
 ###
 
 POST {{baseUrl}}
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
         
-        "name": "miche",
-        "surname": "ilaria",
-        "email": "u.co@gmail.it",
-        "birhDay":"ciao",
-        "avatar": ""
+        "category": "ilaria",
+        "title":"cioaooaoaoa",
+        "cover":"ciafffooo",
+        "readTime": {
+        "value": 2,
+        "unit": "min"}
+        ,
+        "unit":"fffff bello",
+        "content":"ciffffaoooooo"
+            
+       
+       
+        
         
 }
 

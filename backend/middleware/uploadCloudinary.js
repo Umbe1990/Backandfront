@@ -14,7 +14,7 @@ import { CloudinaryStorage } from 'multer-storage-cloudinary';
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary, //ultilizza libreria clodinary
     params: {
-      folder: 'epicod',
+      folder: 'epicode',
       //format: ['jpg']
     },
   });

@@ -1,9 +1,12 @@
 import express from "express";
 import Blog from "../models/Blogs.js";
-
+//import transport from "../services/mailService.js";
+import * as commentController from '../controllers/comment.controller.js';
+/* import authorization from "../middleware/authorization.js";
+ */
 
 const blogRoutes = express.Router()
-
+/* blogRoutes.use(authorization) */;
 blogRoutes.get("/", async (req,res)=>{
     const blogs= await Blog.find()
     res.send(blogs)
@@ -33,6 +36,14 @@ blogRoutes.post('/', async (req, res) => {
         const newUser = new Blog(userData);
 
         const createdUser = await newUser.save();
+        //trasport per mandare la mail
+        /* await transport.sendMail({
+            from: 'noreplay@gmail.com', // sender address
+            to: 'ciao@gmai.com', // list of receivers
+            subject: "Hello ✔", // Subject line
+            text: "sono il piu bello?", // plain text body
+            html: "<b>sono il piu bello?</b>", // html body
+         }) */
         res.status(201).send(createdUser);
     } catch (error) {
         console.log(error);
@@ -61,6 +72,17 @@ blogRoutes.delete('/:blogid', async(req,res)=>{
 
 })
 
+// POST NUVO COMMENTO
+
+blogRoutes.post('/:blogId/comments', commentController.createComment);
+
+blogRoutes.get('/:blogId/comments', commentController.readAll);
+
+blogRoutes.get('/:blogId/comments/:commentId', commentController.getSingleComment);
+
+blogRoutes.delete('/:blogId/comments/:commentId', commentController.deleteComment);
+
+blogRoutes.put('/:blogId/comments/:commentId', commentController.editComment);
 
 
 export default blogRoutes

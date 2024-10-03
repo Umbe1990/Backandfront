@@ -1,15 +1,34 @@
-import React from "react";
-import { Button, Container, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Button, Container, Navbar} from "react-bootstrap";
+import { Link} from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./styles.css";
+
 const NavBar = props => {
+  const [characters, setCharacters] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('')
+  const allBlog= async () => {
+    console.log('ciaoooooooo')
+    try {
+        ;
+        const response = await fetch(
+            'http://localhost:5001/blogs'
+        );
+        if (!response.ok) throw new Error('era una 404');
+        const data = await response.json();
+        setCharacters(data);
+    } catch (error) {
+        setErrorMessage(error.message);
+    } 
+};
+
   return (
     <Navbar expand="lg" className="blog-navbar" fixed="top">
       <Container className="justify-content-between">
         <Navbar.Brand as={Link} to="/">
           <img className="blog-navbar-brand" alt="logo" src={logo} />
         </Navbar.Brand>
+        <Button onClick={allBlog}> clicca</Button>
 
         <Button as={Link} to="/new" className="blog-navbar-add-button bg-dark" size="lg">
           <svg

@@ -1,16 +1,40 @@
-import { Schema, Types, model } from "mongoose"
+import { Schema, model } from "mongoose"
 
 const blogSchema = new Schema(
     {
-        category: "string",
-        title: "string",
-        cover: "string",
-    
-        author: "string",
-        content: "string",
-    },{
+        category: {
+            type: String,
+            required: true,
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        cover: {
+            type: String,
+        },
+        readTime: {
+            value: {
+                type: Number,
+            },
+            unit: {
+                type: String
+            }
+
+        },
+        author: {
+            type: String,
+        },
+        content: {
+            type: String,
+            required: true,
+        },
+    },
+        
+    {
         collection: "blogs"
     }
 
 )
-export default model("Blogs",blogSchema)
+const Blog = model('Blog', blogSchema);
+export default Blog;
